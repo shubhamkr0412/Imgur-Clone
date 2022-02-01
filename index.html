@@ -1,135 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imgur Clone</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-  </head>
-  <body>
-    <div>
-      <div id="navbar">
-        <div id="imgurlogo">
-          <img src="./images/imgur.png" />
-        </div>
-        <div>
-          <button id="newpostbtn">
-            <span class="material-icons-outlined"> add_box </span>
-            <span class="newposttext">New Post</span>
-          </button>
-        </div>
-        <div>
-          <input
-            placeholder="Images, #tags, @users of my!"
-            class="inputnavbar"
-          />
-        </div>
-        <div>
-          <span class="material-icons-outlined searchicon"> search </span>
-        </div>
-        <div>
-          <button class="goaddfreebtn">Go Ad-Free</button>
-        </div>
-        <div>
-          <span class="material-icons-outlined navicons"> local_police </span>
-        </div>
-        <div>
-          <span class="material-icons-outlined navicons">
-            chat_bubble_outline
-          </span>
-        </div>
-        <div>
-          <span class="material-icons-outlined navicons"> notifications </span>
-        </div>
-        <div><p>Saurabhnimkande</p></div>
-        <div>
-          <span class="material-icons-outlined usericon"> account_circle </span>
-        </div>
-      </div>
-      <div id="cardsexplore">
-        <div>
-          <h2>This site kills boredom</h2>
-        </div>
-        <div id="cardsDiv">
-          <div id="tagstop">
-            <div><h3>EXPLORE TAGS</h3></div>
-            <div><h3>MORE TAGS +</h3></div>
-          </div>
-          <div id="subcarddiv">
-            <div>
-              <img src="images/sadf01.png" />
-              <p class="cardTitle">Hydraulic Press</p>
-              <p class="cardPostNo">267 Posts</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+            
+            
+        }
+        #nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            
+
+        }
+        .navSide img{
+            width: 100px;
+            
+        }
+        .navSide{
+            display: flex;
+            align-items: center;
+            /* margin-left: 10px; */
+            justify-content: space-between;
+            /* border: 2px solid black; */
+            width: 20%;
+            
+        }
+        .newpost{
+            padding: 7px 5px;
+            background-color: #1bb76e;
+            color: white;
+            font-weight: 700;
+            font-family: sans-serif;
+            border-radius: 5px;
+        }
+        .newpost span{
+            padding: 1px 7px;
+            background-color: white;
+            margin: 5px;
+            color: #1bb76e;
+            font-weight: 1000;
+            border-radius: 3px;
+            margin-right: 15px;
+            box-shadow: 1px 3px 0px -1px rgba(186,247,223,1);
+            -webkit-box-shadow: 0px 3px 0px -1px rgba(186,247,223,1);
+            -moz-box-shadow: 1px 3px 0px -1px rgba(186,247,223,1);
+        }
+        .search{
+            margin-left: 130px;
+            display: flex;
+            align-items: center;
+            width: 38%;
+            background-color: #454469;
+            border-radius: 5px;
+        }
+
+        .search input{
+            width: 95%;
+            height: 36px;
+            border: none;
+            background-color: transparent;
+            padding: 10px;
+           
+        }
+        .search svg{
+            color: white;
+            font-weight: bolder;
+            
+        }
+
+        .last{
+            display: flex;
+            width: 18%;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+        .last span{
+            background-color: #6432f9;
+            padding: 8.5px 7px;
+            border-radius: 3px;
+            color: white;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+        .last img{
+         width: 28px;
+         color: white;
+        }
+        .account{
+
+            width: 5%;
+        }
+
+        .account span{
+            padding:12px 19px;
+            background-color: #2fb792;
+            border-radius: 50%;
+            
+
+        }
+
+        .main{
+            background-image: url("./new.jpeg");
+        }
+
+        h3{
+            text-align: center;
+            font-family: sans-serif;
+            color: #aed8ea;
+            margin-top: 20px;
+            font-weight: 900;
+            font-size: 22px;
+        }
+        .Mtag{
+            display: flex;
+            height: 300px;
+        }
+        .tag{
+            display: flex;
+            margin: auto;
+            width: 90%;
+            /* border: 1px solid white; */
+        }
+        .tag>div{
+            width: 10%;
+            margin: auto;
+        }
+        .tag>div:hover{
+            transform: scale(1.1);
+        }
+        .tag img{
+            width: 100%;
+        }
+        h4{
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 18px;
+        }
+        p{
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: 10px;
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255, 253, 253, 0.664) ;
+        }
+
+
+
+        h6{
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: 10px;
+            margin-top: 5px;
+            text-align: center;
+            color: rgba(255, 253, 253, 0.664) ;
+        }
+        h5{
+            font-size: 16px;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        #container{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            margin: auto;
+           
+            
+        }
+        #container>div{
+            margin: 80%;
+            
+
+            flex-basis: auto;
+            margin: 15px;
+        }
+        #container>img{
+           flex-basis: 100% !important;
+        }
+        .containt{
+            background-color: #2e3035;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div id="nav">
+                <div class="navSide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Imgur_Title_Screen_Image.svg/1280px-Imgur_Title_Screen_Image.svg.png" alt="">
+                    <div class="newpost"><span>+</span>New post</div>
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Images, #tags, @Users, oh my!">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </div>
+
+                <div class="last">
+                    <span>Go Ad-Free</span>
+                      <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxNzIgMTcyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik03NS4yNSwxNC4zMzMzM3YxNS43MzMwN2MtMTguNTM4ODUsNC43Nzg2MSAtMzIuMjUsMjEuNTY3OTkgLTMyLjI1LDQxLjYwMDI2djQzbC0xNC4zMzMzMywxNC4zMzMzM3Y3LjE2NjY3aDExNC42NjY2N3YtNy4xNjY2N2wtMTQuMzMzMzMsLTE0LjMzMzMzdi00M2MwLC0yMC4wMzIyNyAtMTMuNzExMTUsLTM2LjgyMTY1IC0zMi4yNSwtNDEuNjAwMjZ2LTE1LjczMzA3ek03MS42NjY2NywxNDMuMzMzMzNjMCw3Ljg4MzMzIDYuNDUsMTQuMzMzMzMgMTQuMzMzMzMsMTQuMzMzMzNjNy44ODMzMywwIDE0LjMzMzMzLC02LjQ1IDE0LjMzMzMzLC0xNC4zMzMzM3oiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==" alt="">  
+                      <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxNzIgMTcyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGlkPSJvcmlnaW5hbC1pY29uIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwIiB2aXNpYmlsaXR5PSJoaWRkZW4iPjxwYXRoIGQ9Ik0yNC4wOCwxMy43NmMtOS40NDY1NiwwIC0xNy4yLDcuNzUzNDQgLTE3LjIsMTcuMnY4Mi41NmMwLDkuNDQ2NTYgNy43NTM0NCwxNy4yIDE3LjIsMTcuMmgxNC4wNTU2M2MwLjQ3MDMxLDQuMTI1MzEgMC40MTY1Niw3Ljk2ODQ0IC0wLjYzMTU2LDExLjE4Yy0xLjMxNjg4LDMuOTM3MTkgLTMuNzYyNSw3LjIxNTk0IC04LjMxNzgxLDkuOTQzNzVjLTEuMzE2ODcsMC44MDYyNSAtMS45NDg0NCwyLjM3ODQ0IC0xLjUzMTg3LDMuODdjMC40MDMxMiwxLjQ5MTU2IDEuNzYwMzEsMi41MjYyNSAzLjMwNTYyLDIuNTI2MjVjMTQuNjA2NTYsMCAzMS4zOSwtNy41OTIxOSAzOS44Mjg3NSwtMjcuNTJoNzcuMTMxMjVjOS40NDY1NiwwIDE3LjIsLTcuNzUzNDQgMTcuMiwtMTcuMnYtODIuNTZjMCwtOS40NDY1NiAtNy43NTM0NCwtMTcuMiAtMTcuMiwtMTcuMnpNMjQuMDgsMjAuNjRoMTIzLjg0YzUuNjk3NSwwIDEwLjMyLDQuNjIyNSAxMC4zMiwxMC4zMnY4Mi41NmMwLDUuNjk3NSAtNC42MjI1LDEwLjMyIC0xMC4zMiwxMC4zMmgtNzkuMTJjLTEuNDM3ODEsMCAtMi43NDEyNSwwLjkwMDMxIC0zLjIyNSwyLjI1NzVjLTUuMzYxNTYsMTQuNjIgLTE0Ljk0MjUsMjEuNTI2ODggLTI0Ljg4NjI1LDI0LjA2NjU2YzEuMzU3MTksLTEuOTQ4NDQgMi42MjAzMSwtMy45MjM3NSAzLjMzMjUsLTYuMTE0MDZjMS44MDA2MywtNS40MTUzMSAxLjc0Njg4LC0xMS4zNDEyNSAwLjY0NSwtMTcuMzg4MTJjLTAuMjk1NjIsLTEuNjM5MzggLTEuNzIsLTIuODIxODggLTMuMzg2MjUsLTIuODIxODhoLTE3LjJjLTUuNjk3NSwwIC0xMC4zMiwtNC42MjI1IC0xMC4zMiwtMTAuMzJ2LTgyLjU2YzAsLTUuNjk3NSA0LjYyMjUsLTEwLjMyIDEwLjMyLC0xMC4zMnpNODguNDMyMTksNDUuNzI3ODFsLTQuODY0MzcsNC44NjQzN2wxOC4yMDc4MSwxOC4yMDc4MWgtNDYuNzM1NjN2Ni44OGg0Ni43MzU2M2wtMTguMjA3ODEsMTguMjA3ODFsNC44NjQzNyw0Ljg2NDM3bDI2LjUxMjE5LC0yNi41MTIxOXoiPjwvcGF0aD48L2c+PGcgaWQ9InN1YnRyYWN0ZWQtaWNvbiIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTE0Ny45MiwxMy43NmM5LjQ0NjU2LDAgMTcuMiw3Ljc1MzQ0IDE3LjIsMTcuMmwwLDc1LjkzNzY0Yy0yLjExMDMzLC0xLjg5NDYxIC00LjQxNTI1LC0zLjU3NjIzIC02Ljg4LC01LjAxMDEzdi03MC45Mjc1MWMwLC01LjY5NzUgLTQuNjIyNSwtMTAuMzIgLTEwLjMyLC0xMC4zMmgtMTIzLjg0Yy01LjY5NzUsMCAtMTAuMzIsNC42MjI1IC0xMC4zMiwxMC4zMnY4Mi41NmMwLDUuNjk3NSA0LjYyMjUsMTAuMzIgMTAuMzIsMTAuMzJoMTcuMmMxLjY2NjI1LDAgMy4wOTA2MywxLjE4MjUgMy4zODYyNSwyLjgyMTg4YzEuMTAxODgsNi4wNDY4NyAxLjE1NTYzLDExLjk3MjgxIC0wLjY0NSwxNy4zODgxMmMtMC43MTIxOSwyLjE5MDMxIC0xLjk3NTMxLDQuMTY1NjMgLTMuMzMyNSw2LjExNDA2YzkuOTQzNzUsLTIuNTM5NjkgMTkuNTI0NjksLTkuNDQ2NTYgMjQuODg2MjUsLTI0LjA2NjU2YzAuNDgzNzUsLTEuMzU3MTkgMS43ODcxOSwtMi4yNTc1IDMuMjI1LC0yLjI1NzVoMjkuODkyMTRjLTAuNzg4OTYsMi4yMTQwMSAtMS4zOTM0Niw0LjUxMzU5IC0xLjc5NDc0LDYuODhoLTI2LjEwODY1Yy04LjQzODc1LDE5LjkyNzgxIC0yNS4yMjIxOSwyNy41MiAtMzkuODI4NzUsMjcuNTJjLTEuNTQ1MzEsMCAtMi45MDI1LC0xLjAzNDY5IC0zLjMwNTYyLC0yLjUyNjI1Yy0wLjQxNjU2LC0xLjQ5MTU2IDAuMjE1LC0zLjA2Mzc1IDEuNTMxODcsLTMuODdjNC41NTUzMSwtMi43Mjc4MSA3LjAwMDk0LC02LjAwNjU2IDguMzE3ODEsLTkuOTQzNzVjMS4wNDgxMiwtMy4yMTE1NiAxLjEwMTg3LC03LjA1NDY5IDAuNjMxNTYsLTExLjE4aC0xNC4wNTU2M2MtOS40NDY1NiwwIC0xNy4yLC03Ljc1MzQ0IC0xNy4yLC0xNy4ydi04Mi41NmMwLC05LjQ0NjU2IDcuNzUzNDQsLTE3LjIgMTcuMiwtMTcuMnpNMTE0Ljk0NDM4LDcyLjI0bC0yNi41MTIxOSwyNi41MTIxOWwtNC44NjQzNywtNC44NjQzN2wxOC4yMDc4MSwtMTguMjA3ODFoLTQ2LjczNTYzdi02Ljg4aDQ2LjczNTYzbC0xOC4yMDc4MSwtMTguMjA3ODFsNC44NjQzNywtNC44NjQzN3oiPjwvcGF0aD48L2c+PGc+PGcgZmlsbD0iI2NjY2NjYyI+PGcgaWQ9ItCh0LvQvtC5XzIiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9InN0YXJ0IiB2aXNpYmlsaXR5PSJoaWRkZW4iPjwvZz48ZyBpZD0iQW5kcm9pZF94NUZfNCIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIHZpc2liaWxpdHk9ImhpZGRlbiI+PC9nPjxnIGlkPSJBbmRyb2lkX3g1Rl81IiBmb250LWZhbWlseT0iSW50ZXIsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI0MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJzdGFydCIgdmlzaWJpbGl0eT0iaGlkZGVuIj48L2c+PGcgaWQ9IldpbmRvd3NfeDVGXzgiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9InN0YXJ0IiB2aXNpYmlsaXR5PSJoaWRkZW4iPjwvZz48ZyBpZD0iV2luZG93c194NUZfMTAiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9InN0YXJ0IiB2aXNpYmlsaXR5PSJoaWRkZW4iPjwvZz48ZyBpZD0iQ29sb3IiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9InN0YXJ0IiB2aXNpYmlsaXR5PSJoaWRkZW4iPjwvZz48ZyBpZD0iSU9TIiBmb250LWZhbWlseT0iSW50ZXIsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI0MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJzdGFydCIgdmlzaWJpbGl0eT0iaGlkZGVuIj48L2c+PGcgaWQ9IklPU19jb3B5Ij48cGF0aCBkPSJNMTU3Ljg5NiwxMzcuNmMwLDIuMDY0IC0xLjM3NiwzLjQ0IC0zLjQ0LDMuNDRoLTEzLjQxNnYxMy40MTZjMCwyLjA2NCAtMS4zNzYsMy40NCAtMy40NCwzLjQ0Yy0yLjA2NCwwIC0zLjQ0LC0xLjM3NiAtMy40NCwtMy40NHYtMTMuNDE2aC0xMy40MTZjLTIuMDY0LDAgLTMuNDQsLTEuMzc2IC0zLjQ0LC0zLjQ0YzAsLTIuMDY0IDEuMzc2LC0zLjQ0IDMuNDQsLTMuNDRoMTMuNDE2di0xMy40MTZjMCwtMi4wNjQgMS4zNzYsLTMuNDQgMy40NCwtMy40NGMyLjA2NCwwIDMuNDQsMS4zNzYgMy40NCwzLjQ0djEzLjQxNmgxMy40MTZjMi4wNjQsMCAzLjQ0LDEuMzc2IDMuNDQsMy40NHpNMTcyLDEzNy42YzAsMTguOTIgLTE1LjQ4LDM0LjQgLTM0LjQsMzQuNGMtMTguOTIsMCAtMzQuNCwtMTUuNDggLTM0LjQsLTM0LjRjMCwtMTguOTIgMTUuNDgsLTM0LjQgMzQuNCwtMzQuNGMxOC45MiwwIDM0LjQsMTUuNDggMzQuNCwzNC40ek0xNjUuMTIsMTM3LjZjMCwtMTUuMTM2IC0xMi4zODQsLTI3LjUyIC0yNy41MiwtMjcuNTJjLTE1LjEzNiwwIC0yNy41MiwxMi4zODQgLTI3LjUyLDI3LjUyYzAsMTUuMTM2IDEyLjM4NCwyNy41MiAyNy41MiwyNy41MmMxNS4xMzYsMCAyNy41MiwtMTIuMzg0IDI3LjUyLC0yNy41MnoiPjwvcGF0aD48L2c+PC9nPjxnIGZpbGw9IiMwMDAwMDAiIG9wYWNpdHk9IjAiPjxnIGlkPSJJT1MiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9InN0YXJ0IiB2aXNpYmlsaXR5PSJoaWRkZW4iPjwvZz48ZyBpZD0iSU9TX2NvcHkiPjxwYXRoIGQ9Ik0xMzcuNiw5Ni4zMmMtMjIuNzA0LDAgLTQxLjI4LDE4LjU3NiAtNDEuMjgsNDEuMjhjMCwyMi43MDQgMTguNTc2LDQxLjI4IDQxLjI4LDQxLjI4YzIyLjcwNCwwIDQxLjI4LC0xOC41NzYgNDEuMjgsLTQxLjI4YzAsLTIyLjcwNCAtMTguNTc2LC00MS4yOCAtNDEuMjgsLTQxLjI4eiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvZz48L3N2Zz4=" alt="">
+                      <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxNzIgMTcyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik04NiwwYy0wLjYxNzM0LDAgLTEuMjM0NzksMC4xNzI0OCAtMS43NzY1OSwwLjUxNzQ3bC0xMC4wMTI4OCw2LjM3NTcxbC0xMS42ODkzMywtMi4wNzMxMmMtMS4yNjg4MywtMC4yMjQ1OSAtMi41NTIzMiwwLjMwNzMyIC0zLjI4OTYsMS4zNjMxM2wtNi43OTU2Myw5LjczNDQ0bC0xMS41ODk4NCwyLjU2NzM0Yy0xLjI1NTI3LDAuMjc4MTggLTIuMjM1NTQsMS4yNTkwOSAtMi41MTM3MiwyLjUxNDM2bC0yLjU2Nzk4LDExLjU4OTJsLTkuNzM0NDQsNi43OTYyN2MtMS4wNTY0OCwwLjczNzI4IC0xLjU4ODA1LDIuMDIxMTEgLTEuMzYzMTMsMy4yODk2bDIuMDczMTIsMTEuNjg5OThsLTYuMzc1NzEsMTAuMDEyODhjLTAuNjg5OTgsMS4wODM2IC0wLjY4OTk4LDIuNDY4OTQgMCwzLjU1MjU0bDYuMzc1NzEsMTAuMDEyODdsLTIuMDczMTIsMTEuNjg5OThjLTAuMjI0OTIsMS4yNjg1IDAuMzA2NjUsMi41NTIzMiAxLjM2MzEzLDMuMjg5Nmw5LjczMzc5LDYuNzk1NjNsMi41Njc5OCwxMS41ODk4NGMwLjI3ODE4LDEuMjU1MjcgMS4yNTg0NSwyLjIzNTIxIDIuNTEzNzIsMi41MTM3MmwxMS41ODk4NCwyLjU2Nzk4bDAuNDg4NCwwLjY5ODM2djUxLjYwNDUyYzAsMS4xMTk2NSAwLjU2NjIsMi4xNjMxNSAxLjUwNTI2LDIuNzczNDJjMC45MzkwNSwwLjYwOTk0IDIuMTIyMTQsMC43MDQxNyAzLjE0NTU0LDAuMjQ5MzdsMjguNDI1NDgsLTEyLjYzMzgzbDI4LjQyNTQ4LDEyLjYzMzE5YzAuNDI5NjcsMC4xOTA4NSAwLjg4Njk3LDAuMjg0OSAxLjM0MzEsMC4yODQ5YzAuNjMwNDUsMCAxLjI1ODMsLTAuMTc5NyAxLjgwMzA4LC0wLjUzMzYyYzAuOTM4NzIsLTAuNjEwMjcgMS41MDUyNiwtMS42NTQ0MiAxLjUwNTI2LC0yLjc3NDA3di01MS42MDMyM2wwLjQ4Nzc2LC0wLjY5ODM2bDExLjU4OTg0LC0yLjU2Nzk4YzEuMjU1MjcsLTAuMjc4MTggMi4yMzUyMSwtMS4yNTg0NSAyLjUxMzcyLC0yLjUxMzcybDIuNTY3OTgsLTExLjU4OTg0bDkuNzM0NDQsLTYuNzk1NjNjMS4wNTYxNSwtMC43MzcyOCAxLjU4ODA1LC0yLjAyMTEgMS4zNjMxMywtMy4yODk2bC0yLjA3MzEyLC0xMS42ODk5OGw2LjM3NTcxLC0xMC4wMTI4OGMwLjY4OTY1LC0xLjA4MzYgMC42ODk5OCwtMi40Njk1OCAwLC0zLjU1MzE4bC02LjM3NjM1LC0xMC4wMTI4OGwyLjA3Mzc3LC0xMS42ODkzM2MwLjIyNDkyLC0xLjI2ODUgLTAuMzA3NjMsLTIuNTUyMzIgLTEuMzYzNzcsLTMuMjg5NmwtOS43MzM3OSwtNi43OTYyOGwtMi41Njc5OCwtMTEuNTg5MmMtMC4yNzgxOCwtMS4yNTUyNyAtMS4yNTg0NSwtMi4yMzU4NiAtMi41MTM3MiwtMi41MTQzNmwtMTEuNTg5ODQsLTIuNTY3OThsLTYuNzk1NjMsLTkuNzMzNzljLTAuNzM3NjIsLTEuMDU2NDggLTIuMDIyNzYsLTEuNTg5MDMgLTMuMjg5NiwtMS4zNjM3OGwtMTEuNjg5OTgsMi4wNzM3N2wtMTAuMDEyODgsLTYuMzc2MzVjLTAuNTQxOTcsLTAuMzQ0OTkgLTEuMTU5MjUsLTAuNTE3NDcgLTEuNzc2NTksLTAuNTE3NDd6TTg2LDcuMjI5MTJsOS4zMjI5MSw1LjkzNjRjMC42OTg1OCwwLjQ0NDg4IDEuNTM4NDcsMC42MTA2NSAyLjM1NDE0LDAuNDY2NDRsMTAuODc3MjcsLTEuOTI5MDZsNi4zMjQ2Nyw5LjA1ODY4YzAuNDc0NjUsMC42Nzk3MyAxLjE4Njg1LDEuMTU2MzkgMS45OTYyNSwxLjMzNmwxMC43OTA3LDIuMzkwOTdsMi4zOTAzMiwxMC43OTAwNWMwLjE3OTYxLDAuODA5MzkgMC42NTYyNywxLjUyMjU3IDEuMzM2LDEuOTk2ODlsOS4wNTg2OCw2LjMyNDAybC0xLjkyOTA2LDEwLjg3NzI3Yy0wLjE0NDIyLDAuODE1NjggMC4wMjE1NSwxLjY1NTU2IDAuNDY2NDQsMi4zNTQxNGw1LjkzNjQsOS4zMjI5MWwtNS45MzY0LDkuMzIyOTFjLTAuNDQ0ODgsMC42OTg1OCAtMC42MTEzLDEuNTM4NDcgLTAuNDY3MDgsMi4zNTQxNGwxLjkyOTA2LDEwLjg3NzI3bC05LjA1ODY4LDYuMzI0NjdjLTAuNjc5NzMsMC40NzQ2NSAtMS4xNTYzOSwxLjE4Njg1IC0xLjMzNiwxLjk5NjI1bC0yLjM5MDMzLDEwLjc5MDdsLTEwLjc5MDcsMi4zOTAzMmMtMC44MDkzOSwwLjE3OTYxIC0xLjUyMTkyLDAuNjU2MjcgLTEuOTk2MjUsMS4zMzZsLTYuMzI0NjcsOS4wNTg2OGwtMTAuODc3MjcsLTEuOTI5MDZjLTAuODE1MzUsLTAuMTQzODggLTEuNjU1NTYsMC4wMjE1NSAtMi4zNTQxNSwwLjQ2NjQ0bC05LjMyMjI2LDUuOTM2NGwtOS4zMjI5MSwtNS45MzY0Yy0wLjUzNDE5LC0wLjM0MDAzIC0xLjE1MTExLC0wLjUxNjgzIC0xLjc3NjU5LC0wLjUxNjgzYy0wLjE5MjUxLDAgLTAuMzg1NzEsMC4wMTY2NSAtMC41Nzc1NSwwLjA1MDM5bC0xMC44NzcyNywxLjkyOTA2bC02LjMyNDAyLC05LjA1ODY4Yy0wLjQ3NDY1LC0wLjY3OTczIC0xLjE4NzUsLTEuMTU2MzkgLTEuOTk2ODksLTEuMzM2bC0xMC43OTAwNSwtMi4zOTA5N2wtMi4zOTAzMywtMTAuNzkwMDVjLTAuMTc5MjgsLTAuODA5MzkgLTAuNjU2MjcsLTEuNTIyNTcgLTEuMzM2LC0xLjk5Njg5bC05LjA1ODY4LC02LjMyNDAybDEuOTI5MDYsLTEwLjg3NzI3YzAuMTQ0ODgsLTAuODE1NjggLTAuMDIxNTUsLTEuNjU1NTYgLTAuNDY2NDMsLTIuMzU0MTRsLTUuOTM3MDUsLTkuMzIyOTFsNS45MzY0LC05LjMyMjkxYzAuNDQ0ODgsLTAuNjk4NTggMC42MTEzMSwtMS41Mzg0NyAwLjQ2NjQ0LC0yLjM1NDE0bC0xLjkyOTA2LC0xMC44NzcyN2w5LjA1ODY4LC02LjMyNDY3YzAuNjgwMDYsLTAuNDc0NjUgMS4xNTY3MiwtMS4xODY4NSAxLjMzNiwtMS45OTYyNWwyLjM5MDMyLC0xMC43OTA3bDEwLjc5MDcsLTIuMzkwMzJjMC44MDkzOSwtMC4xNzk2MSAxLjUyMTkyLC0wLjY1NjI3IDEuOTk2MjUsLTEuMzM2bDYuMzI0NjcsLTkuMDU4NjhsMTAuODc3MjcsMS45MjkwNmMwLjgxNTAyLDAuMTQ0MjIgMS42NTU1NiwtMC4wMjE1NSAyLjM1NDE0LC0wLjQ2NjQ0ek04NiwyNi40NjE1NGMtMjEuODg2MzQsMCAtMzkuNjkyMzEsMTcuODA1OTcgLTM5LjY5MjMxLDM5LjY5MjMxYzAsMjEuODg2MzQgMTcuODA1OTcsMzkuNjkyMzEgMzkuNjkyMzEsMzkuNjkyMzFjMjEuODg2MzQsMCAzOS42OTIzMSwtMTcuODA1OTcgMzkuNjkyMzEsLTM5LjY5MjMxYzAsLTIxLjg4NjM0IC0xNy44MDU5NywtMzkuNjkyMzEgLTM5LjY5MjMxLC0zOS42OTIzMXpNODYsMzMuMDc2OTJjMTguMjM4OTUsMCAzMy4wNzY5MiwxNC44Mzc5OCAzMy4wNzY5MiwzMy4wNzY5MmMwLDE4LjIzODk1IC0xNC44Mzc5OCwzMy4wNzY5MiAtMzMuMDc2OTIsMzMuMDc2OTJjLTE4LjIzODYyLDAgLTMzLjA3NjkyLC0xNC44Mzc5OCAtMzMuMDc2OTIsLTMzLjA3NjkyYzAsLTE4LjIzODk1IDE0LjgzODMxLC0zMy4wNzY5MiAzMy4wNzY5MiwtMzMuMDc2OTJ6TTg1Ljk5OTM2LDQwLjY1ODEzYy0xLjI1OTI0LDAgLTIuNDA4OTMsMC43MTQyMiAtMi45NjU5NCwxLjg0MzE0bC01Ljc1MDk5LDExLjY1MzhsLTEyLjg2MDU5LDEuODY4MzNjLTEuMjQ2MDEsMC4xODEyNiAtMi4yODEzOSwxLjA1NDY5IC0yLjY3MDcsMi4yNTIwN2MtMC4zODg5OCwxLjE5NzM4IC0wLjA2NDQyLDIuNTExNTMgMC44MzcyNiwzLjM5MDM4bDkuMzA2MTIsOS4wNzA5NmwtMi4xOTY1MiwxMi44MDg5MWMtMC4yMTMwMiwxLjI0MTA1IDAuMjk2ODksMi40OTU0MSAxLjMxNTMzLDMuMjM1MzRjMS4wMTkxLDAuNzQwNTkgMi4zNjkwNSwwLjgzNzQyIDMuNDgzNDEsMC4yNTE5NWwxMS41MDMyNywtNi4wNDc1MmwxMS41MDI2Myw2LjA0Njg3YzAuNDgzOTIsMC4yNTQwMyAxLjAxMjYsMC4zNzk4NyAxLjUzODg1LDAuMzc5ODdjMC42ODU2OCwwIDEuMzY4MzYsLTAuMjEzNCAxLjk0NDU2LC0wLjYzMTgyYzEuMDE4NDQsLTAuNzM5OTMgMS41Mjg5OSwtMS45OTM2NSAxLjMxNTk3LC0zLjIzNDY5bC0yLjE5NzE2LC0xMi44MDg5MWw5LjMwNjExLC05LjA3MDk2YzAuOTAxNjgsLTAuODc4ODUgMS4yMjYyNCwtMi4xOTM2NCAwLjgzNzI2LC0zLjM5MTAzYy0wLjM4OTMyLC0xLjE5NzM4IC0xLjQyNDM4LC0yLjA3MDE3IC0yLjY3MDA2LC0yLjI1MTQzbC0xMi44NjA1OSwtMS44NjgzM2wtNS43NTE2NCwtMTEuNjUzOGMtMC41NTczNSwtMS4xMjg5MiAtMS43MDczNSwtMS44NDMxNCAtMi45NjY1OSwtMS44NDMxNHpNODYsNTEuNDM5MTRsMy41NTQ0OCw3LjIwMjYzYzAuNDgxOTMsMC45NzYxIDEuNDEzMTUsMS42NTM0IDIuNDkwNDYsMS44MTAxOWw3Ljk0OTQ0LDEuMTU1MTFsLTUuNzUxNjQsNS42MDYyOGMtMC43NzkyOSwwLjc2MDExIC0xLjEzNTUxLDEuODU0NDggLTAuOTUxNjEsMi45Mjc4M2wxLjM1Nzk2LDcuOTE3MTRsLTcuMTEwMjUsLTMuNzM3OTVjLTAuNDgxNiwtMC4yNTMzNyAtMS4wMTAyOCwtMC4zNzkyMiAtMS41Mzg4NSwtMC4zNzkyMmMtMC41Mjg5LDAgLTEuMDU3MjUsMC4xMjYxOCAtMS41Mzg4NSwwLjM3OTIybC03LjExMDI1LDMuNzM3OTVsMS4zNTc5NiwtNy45MTcxNGMwLjE4NDI0LC0xLjA3MzAyIC0wLjE3MTk4LC0yLjE2NzcyIC0wLjk1MTYxLC0yLjkyNzgzbC01Ljc1MTY0LC01LjYwNjI4bDcuOTQ4OCwtMS4xNTUxMWMxLjA3NzMyLC0wLjE1Njc4IDIuMDA4ODYsLTAuODM0MDkgMi40OTA0NiwtMS44MTAxOXpNNzQuMjEwNTMsMTI1LjQxMzg3bDEwLjAxMjg4LDYuMzc1NzFjMC41NDE4LDAuMzQ0OTkgMS4xNTkzOCwwLjUxNzQ4IDEuNzc2NTksMC41MTc0OGMwLjYxNzIyLDAgMS4yMzQ0NiwtMC4xNzI0OCAxLjc3NjU5LC0wLjUxNzQ4bDEwLjAxMjg4LC02LjM3NTcxbDExLjY4OTMzLDIuMDczMTJjMS4xMDQ3NywwLjE5NjgxIDIuMjI1MjgsLTAuMTg0MDUgMi45ODI3NCwtMC45ODY0OXYzNy4xMDE3MWwtMjMuMTUzODUsLTEwLjI5MDAzdi0xMS4wODE0MWMwLC0xLjgyNjUxIC0xLjQ4MTE4LC0zLjMwNzY5IC0zLjMwNzY5LC0zLjMwNzY5Yy0xLjgyNjg0LDAgLTMuMzA3NjksMS40ODExOCAtMy4zMDc2OSwzLjMwNzY5djExLjA4MTQxbC0yMy4xNTM4NSwxMC4yOTA2N3YtMzcuMTAyMzZjMC43NTY4LDAuODAyMTIgMS44NzUzNCwxLjE4MjMxIDIuOTgyMDksMC45ODY0OXoiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==" alt="">
+                </div>
+                
+                <div class="account">
+                    <span>I</span>
+                </div>
             </div>
-            <div>
-              <img src="images/sadf02.jpg" />
-              <p class="cardTitle">Oddly Satisfying</p>
-              <p class="cardPostNo">6,541 Posts</p>
+
+            <h3>A cow-bison hybrid is called a "beefalo."</h3>
+
+            <div class="Mtag">
+                <div class="tag">
+                    <div style="width: 18%; background-color: #4d549a;">
+                        <img src="./img2.jpeg" alt="">
+                        <h5>Vacation</h5>
+                        <h6>FEATURED 2000 Posts</h6>
+                    </div>
+                    <div style="background-color:#5e58cb;">
+                        <img src="./img3.jpeg" alt="">
+                        <h4>Oddly</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                    <div style="background-color: #383c64;">
+                        <img src="./img4.jpeg" alt="">
+                        <h4>Coffee</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                    <div style="background-color:#132d31 ;">
+                        <img src="./img5.jpeg" alt="">
+                        <h4>Staff Picks</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                    <div style="background-color: #13b5ce;">
+                        <img src="./img6.jpeg" alt="">
+                        <h4>Meams</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                    <div style="background-color: 
+                    #328d67;">
+                        <img src="./img7.jpeg" alt="">
+                        <h4>Funny</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                    <div style="background-color: #6a2786;">
+                        <img src="./img8.jpeg" alt="">
+                        <h4>Clean</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                    <div style="background-color: rgb(130, 235, 130);">
+                        <img src="./img10.jpeg" alt="">
+                        <h4>Intresting</h4>
+                        <p>2000 Posts</p>
+                    </div>
+                </div>
             </div>
-            <div>
-              <img src="images/sadf03.jpg" />
-              <p class="cardTitle">Coffee</p>
-              <p class="cardPostNo">9,152 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf04.jpg" />
-              <p class="cardTitle">Staff Picks</p>
-              <p class="cardPostNo">6,520 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf05.png" />
-              <p class="cardTitle">Gaming</p>
-              <p class="cardPostNo">297,513 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf06.jpg" />
-              <p class="cardTitle">Memes</p>
-              <p class="cardPostNo">566,934 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf07.jpg" />
-              <p class="cardTitle">Clean Your Desk</p>
-              <p class="cardPostNo">529 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf08.png" />
-              <p class="cardTitle">Funny</p>
-              <p class="cardPostNo">2,696,269 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf09.png" />
-              <p class="cardTitle">Aww</p>
-              <p class="cardPostNo">763,393 Posts</p>
-            </div>
-            <div>
-              <img src="images/sadf10.jpg" />
-              <p class="cardTitle">Oc</p>
-              <p class="cardPostNo">39,123 Posts</p>
-            </div>
-          </div>
+            
         </div>
-      </div>
-      <div id="imgurPosts">
-        <div id="postParent1"></div>
-        <div id="postParent2"></div>
-        <div id="postParent3"></div>
-        <div id="postParent4"></div>
-        <div id="postParent5"></div>
-      </div>
-    </div>
-  </body>
-  <script src="./scripts/index.js"></script>
+        <div class="containt">
+            <div id="container"></div>
+
+            <div style="display: flex; justify-content: space-between; margin: 20px;">
+                <div onclick="prev()"><img src="https://img.icons8.com/fluency/48/000000/previous.png"/></div>
+                <div onclick="next()"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="48" height="48"
+                    viewBox="0 0 48 48"
+                    style=" fill:#000000;"><linearGradient id="Aloa0lEugM1BRxWwkV28Va_qTGin8likYEt_gr1" x1="24" x2="24" y1="6.121" y2="42.039" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#21ad64"></stop><stop offset="1" stop-color="#088242"></stop></linearGradient><path fill="url(#Aloa0lEugM1BRxWwkV28Va_qTGin8likYEt_gr1)" d="M40,42H8c-1.1,0-2-0.9-2-2V8c0-1.1,0.9-2,2-2h32c1.1,0,2,0.9,2,2v32C42,41.1,41.1,42,40,42z"></path><path d="M32.352,22.44l-11.436-7.624c-0.577-0.385-1.314-0.421-1.925-0.093C18.38,15.05,18,15.683,18,16.376	v15.248c0,0.693,0.38,1.327,0.991,1.654c0.278,0.149,0.581,0.222,0.884,0.222c0.364,0,0.726-0.106,1.04-0.315l11.436-7.624	c0.523-0.349,0.835-0.932,0.835-1.56C33.187,23.372,32.874,22.789,32.352,22.44z" opacity=".05"></path><path d="M20.681,15.237l10.79,7.194c0.689,0.495,1.153,0.938,1.153,1.513c0,0.575-0.224,0.976-0.715,1.334	c-0.371,0.27-11.045,7.364-11.045,7.364c-0.901,0.604-2.364,0.476-2.364-1.499V16.744C18.5,14.739,20.084,14.839,20.681,15.237z" opacity=".07"></path><path fill="#fff" d="M19,31.568V16.433c0-0.743,0.828-1.187,1.447-0.774l11.352,7.568c0.553,0.368,0.553,1.18,0,1.549	l-11.352,7.568C19.828,32.755,19,32.312,19,31.568z"></path></svg></div>
+            </div>
+            
+        </div>
+
+      
+        
+    </header>
+
+   
+    
+</body>
 </html>
+
+<script>
+    var num = 12;
+   
+async function  showData(num){
+    try{
+        const data = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=${num}`);
+    const res = await data.json();
+    console.log(res);
+    appenddiv(res)
+    }
+    catch(err){
+        console.log(err)
+    };
+  
+}
+showData(num);
+let div = document.getElementById("container");
+
+
+function appenddiv(d){
+    d.forEach(val => {
+        let image = document.createElement('img');
+        var d = document.createElement('div');
+        image.src = `https://picsum.photos/200/350?random=${val.id}`;
+        d.append(image)
+        div.append(d);
+    });
+    
+}
+
+function next(){
+   let newNum = num + 12;
+   if(newNum==24){
+       num = 0
+   }
+    showData(newNum);
+}
+
+
+
+
+
+
+
+
+</script>
